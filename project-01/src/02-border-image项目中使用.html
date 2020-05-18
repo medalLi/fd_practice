@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        .panel{
+            width: 300px;
+            height: 150px;
+
+            border:1px solid red;
+            /*分别设置每一个边框的宽度，是为了能够完整的显示背景图*/
+            border-width: 20px 10px 10px 10px ;
+
+            /*设置了边框，那盒子就变大了，如果想让它不变大，那就设置內减模型*/
+            box-sizing: border-box;
+            /*盒子还是原来那么大，那内容就变小了，那怎么办呢？子绝父相*/
+            position: relative;
+
+            /* 边框等下面要用图片来修饰*/
+            border-image-source: url(./images/panel-l-t.png);
+            border-image-slice: 20 10 10 10;
+            border-image-width: 20px 10px 10px 10px;
+            border-image-repeat: stretch;
+        }
+        .inner{
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="panel">
+    <div class="inner">
+        我不好
+    </div>
+
+</div>
+</body>
+</html>

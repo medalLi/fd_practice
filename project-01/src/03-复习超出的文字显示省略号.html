@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            border: 1px solid red;
+            /*超出文字显示省略号：三步走
+            1.设置不允许换行
+            2.超出了就隐藏
+            3.设置隐藏的部分为省略号
+            */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+
+</head>
+<body>
+<span>
+    akjfkajdlakdjfa;lkdjfkl;ajdflja;llkdjfalkdjflk;ajdlkjf
+</span>
+</body>
+</html>

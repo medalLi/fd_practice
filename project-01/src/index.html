@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>可视化项目</title>
+    <!-- 引入公共的样式 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- 引入我们自己要写的css样式-->
+    <link rel="stylesheet" href="./css/index.css">
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/echarts.4.5.0.js"></script>
+    <script src="./js/china.js"></script>
+</head>
+<body>
+<div>
+    <h3 class="header-title">大 数 据 可 视 化</h3>
+</div>
+<!--版心-->
+<div class="container">
+    大数据可视化项目
+    <!--第一列-->
+    <div class="collum">
+        <!--1.1数据概览-->
+        <div class="overvies panel">
+            <div class="inner"></div>
+        </div>
+        <!--1.2设备故障监控-->
+        <div class="monitor panel">
+            <div class="inner"></div>
+        </div>
+        <!--1.3点位分布-->
+        <div class="point panel">
+            <div class="inner">
+                <h3>点位分布统计</h3>
+                <div class="echarts">
+                    <div class="pie"></div>
+                    <div class="data">
+                        <div class="item">
+                            <p>320.11</p>
+                            <span>点位总数</span>
+                        </div>
+                        <div class="item">
+                            <p>418</p>
+                            <span>本月新增</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--第二列-->
+    <div class="collum">
+        <!--2.1设备地图统计-->
+        <div class="map ">
+            <h3>设备数量统计</h3>
+            <div class="echarts">
+                <div class="geo">
+
+                </div>
+            </div>
+        </div>
+        <!--2.2全国用户总量统计-->
+        <div class="user panel">
+            <div class="inner"></div>
+        </div>
+
+    </div>
+
+    <!--第三列-->
+    <div class="collum">
+        <!--3.1订单统计-->
+        <div class="order panel"></div>
+        <!--3.2销售额统计-->
+        <div class="sales panel"></div>
+        <!--3.3渠道分布&销售进度-->
+        <div class="wrap">
+            <!--左边渠道分布 -->
+            <div class="channel panel fl"></div>
+            <!--右侧销售进度 -->
+            <div class="quarter panel fr"></div>
+        </div>
+
+        <!--3.4全国热榜-->
+        <div class="hot panel"></div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

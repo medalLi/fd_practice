@@ -1,0 +1,176 @@
+/*第一部分 整体的html布局*/
+/*1.body背景图*/
+body{
+    background: url("../images/bg.png");
+    /*背景图片会等比例缩放，一定会铺满这整个盒子*/
+    background-size: cover;
+}
+/*2.版心*/
+.container{
+    /*高度适应屏幕，但是最少不能少于700px*/
+    min-height: 700px;
+    /*宽度也要设置一下，自适应*/
+    min-width: 500px;
+    max-width: 1920px;
+    /*版心居中*/
+    margin:0 auto;
+    padding: 90px;
+    background: url("../images/header.png") no-repeat;
+    /*背景图等比例缩放*/
+    background-size: contain;
+
+    /*font-size: 22px;*/
+    /*color: #fff;*/
+
+    /*伸缩布局*/
+    display: flex;
+}
+.header-title{
+    position: absolute;
+    font-size: 40px;
+    color: #fff;
+    margin-left: 42%;
+    margin-top: 20px;
+    /*float: ;*/
+    text-align: center;
+    /*margin-bottom: 20px;*/
+}
+/*边框背景图 公共类*/
+.panel{
+    position: relative;
+
+    border: 1px solid red;
+    border-width: 10px 5px 5px 5px;
+    border-image: url('../images/panel-l-t.png') 10 5 5 5 stretch;
+}
+.panel .inner{
+    position: absolute;
+    top:-10px;
+    right: -5px;
+    bottom: -5px;
+    left:-5px;
+    padding: 20px 20px;
+
+}
+/*第一列的样式*/
+.collum:nth-child(1){
+    flex: 3;
+}
+
+/* 1.1数据概览 */
+.overvies{
+    height: 100px;
+    /*background-color: pink;*/
+}
+/* 1.2设备故障监控 */
+.monitor{
+    height: 400px;
+    margin-top: 20px;
+    /*background-color: pink;*/
+}
+/* 1.3点位分布 */
+.point{
+    height: 250px;
+    margin-top: 20px;
+
+    /*background-color: pink;*/
+}
+.point h3{
+    color: #fff;
+    font-size:18px;
+    font-weight: normal;
+}
+.point .echarts{
+    height: 240px;
+    margin-top: 10px;
+}
+.point .echarts .pie{
+    float: left;
+    width:63%;
+    height: 75%;
+    background-color: rgba(255,255,255,0.1);
+}
+.point .echarts .data{
+    float: right;
+    width:33%;
+    height: 75%;
+    background-color: rgba(255,255,255,0.2);
+}
+.point .echarts .data .item{
+    height: 50%;
+    /* item 里面span标签属于行内元素，设置text-align：center是可以水平*/
+    text-align: center;
+/* item里面的p标签设置了margin-top，防止塌陷这里加上overflow:hidden*/
+    overflow: hidden;
+}
+.point .echarts .data .item p{
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.point .echarts .data .item span{
+    color: #4c9bfd;
+}
+
+/*第二列的样式*/
+.collum:nth-child(2){
+    padding-left: 20px;
+    flex: 4;
+}
+
+/*2.1设备地图统计*/
+.map{
+    height: 520px;
+}
+.map h3{
+    font-size:22px;
+    color:#fff;
+
+}
+.map .echarts{
+    margin-top: 15px;
+    background-color: rgba(255,255,255,0.1);
+    height:480px;
+}
+/*2.2全国用户总量统计*/
+.user{
+    margin-top: 20px;
+    height:250px ;
+}
+
+/*第三列的样式*/
+.collum:nth-child(3){
+    padding-left: 20px;
+    flex: 3;
+}
+/*3.1订单统计*/
+.order{
+    height: 120px;
+}
+/*3.2销售额统计*/
+.sales{
+    margin-top: 20px;
+    height: 180px;
+}
+/*3.3渠道分布&销售进度*/
+.collum:nth-child(3) .wrap{
+    margin-top: 20px;
+    height: 200px;
+}
+/*左边渠道分布*/
+.channel{
+    height: 100%;
+    width: 48%;
+}
+/*右侧销售进度*/
+.quarter{
+    height: 100%;
+    width: 48%;
+}
+/*3.4全国热榜*/
+.hot{
+    margin-top: 20px;
+    height: 230px;
+}

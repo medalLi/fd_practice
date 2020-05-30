@@ -1,4 +1,50 @@
+// 页面上所有的js动态效果都在这里写
 
+// 入口函数
+$(function () {
+    // 1.设备监控模块(1.2模块)有一个tab栏切换
+
+    //思路：给页签设置点击事件，
+    $('.monitor .tabs a').on('click',function () {
+        //当前点击的页面添加active类，其它的兄弟页签移除这个active类
+        $(this).addClass('active').siblings().removeClass('active');
+        //获取当前点击的页签的索引
+        var idx = $(this).index();
+        //让索引一致的页面显示，其它的隐藏
+        $('.monitor .content').eq(idx).show().siblings('.content').hide();
+    })
+    // 2.设备监控模块(1.2模块)有一个轮播图效果
+    // 2.1必须理解版 轮播图
+    // function lunbo() {
+    //     $('.monitor .content .carousel>ul').animate({
+    //         top: -175
+    //     },5000,'linear',function () {
+    //         $('.monitor .content .carousel>ul').css('top',0)
+    //     });
+    // }
+    // lunbo()
+    // setInterval(lunbo,5000);
+
+    function lunbo() {
+        $('.monitor .content .carousel>ul').animate({
+            top: -525
+        },5000,'linear',function () {
+            $('.monitor .content .carousel>ul').css('top',0)
+        });
+    }
+    lunbo()
+    setInterval(lunbo,5000);
+    // 3.设备监控模块(1.2模块)有一个鼠标移入的效果
+    $('.monitor .content .carousel>ul>li').on('mouseenter',function () {
+        $(this).addClass('active').siblings().removeClass('active')
+    })
+    $('.monitor .content .carousel>ul>li').on('mouseleave',function () {
+        $(this).removeClass('active')
+    })
+    // 4.订单模块(3.1模块)有一个鼠标点击tab栏的效果
+
+    // 5.全国热销(3.4模块)有一个鼠标移入的效果
+})
 
 //入口函数-饼图
 $(function () {

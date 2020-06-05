@@ -68,6 +68,90 @@ body{
     margin-top: 20px;
     /*background-color: pink;*/
 }
+
+/* 页签 */
+.monitor .tabs{
+    height: 24px;
+}
+.monitor .tabs a{
+     color:#1950c4;
+    font-size: 15px;
+ }
+.monitor .tabs a.active{
+    color:#fff;
+}
+.monitor .tabs a:nth-child(1){
+    border-right: 2px solid #00f2f1;
+    padding-right: 10px;
+}
+.monitor .tabs a:nth-child(2){
+    margin-left: 7px;
+}
+
+/* 页面 */
+.monitor .content .head{
+    background-color: rgba(255,255,255,0.1);
+    height:38px;
+    line-height: 38px;
+    margin-top: 10px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+}
+.monitor .content .head span{
+   /* 浮动起来也会变成行内块，但是没有换行空格*/
+    float: left;
+    width:25%;
+    color: #68d8fe;
+}
+.monitor .content .head span:nth-child(2){
+    width: 50%;
+}
+
+/* 轮播图 */
+.monitor .content .carousel {
+    height: 300px;
+    overflow: hidden;
+    /* 父相 */
+    position: relative;
+
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.monitor .content ul{
+    margin-top: 5px;
+    /* 子绝 */
+    position: absolute;
+}
+.monitor .content ul li{
+     color: #5696e5;
+     height: 35px;
+     line-height: 35px;
+     padding-left: 20px;
+     padding-right: 70px;
+ }
+.monitor .content ul li.active{
+    background-color: rgba(255,255,255,0.1);
+    color: #68d8fe;
+
+}
+.monitor .content ul li span{
+    float: left;
+}
+.monitor .content ul li span:nth-child(1){
+    width: 25%;
+}
+.monitor .content ul li span:nth-child(2){
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.monitor .content ul li span:nth-child(3){
+    width: 25%;
+    padding-left: 50px;
+
+}
 /* 1.3点位分布 */
 .point{
     height: 250px;

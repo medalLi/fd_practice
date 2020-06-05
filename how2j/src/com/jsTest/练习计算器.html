@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习计算器</title>
+    <style>
+        .container{
+            height: 20px;
+        }
+        input{
+            border: 1px solid ;
+            width: 50px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <input class="var1" type="text">
+    <span>+</span>
+    <input class="var2" type="text">
+    <span>=</span>
+    <input class="result" type="text">
+    <button id="suan">运算</button>
+    <script src="jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $("#suan").click(function () {
+            var number1 = $(".var1").val();
+            var number2 = $(".var2").val();
+            var result = parseInt(number1)+parseInt(number2);
+            $(".result").val(result);
+        })
+    </script>
+</div>
+</body>
+</html>

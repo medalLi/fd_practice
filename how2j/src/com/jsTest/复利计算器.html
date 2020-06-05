@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复利计算器</title>
+    <style>
+        .container{
+            border: 1px solid ;
+            width: 320px;
+            height: 320px;
+        }
+        input{
+            border: 1px solid;
+            width: 200px;
+            height: 20px;
+            margin-bottom: 2px;
+        }
+        .column{
+            border-bottom: 1px solid;
+        }
+        .firstColumn{
+            display: inline-block;
+            border-right: 1px solid;
+            height: 27px;
+            width: 75px;
+        }
+        .secondColumn{
+            display: inline-block;
+        }
+        .fourColumn{
+            margin-left: 60px;
+            height: 27px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!--第一行-->
+    <div class="column">
+        <span class="firstColumn">起始资金</span>
+        <div class="secondColumn">
+            <span >
+                <input type="text" value="10000">
+            </span>
+            ￥
+        </div>
+
+    </div>
+    <!--第二行-->
+    <div class="column">
+        <span class="firstColumn">每年收益</span>
+        <div class="secondColumn">
+            <span >
+                <input type="text"  value="5">
+            </span>
+            %
+        </div>
+
+    </div>
+    <!--第三行-->
+    <div class="column">
+        <span class="firstColumn">复利年数</span>
+        <div class="secondColumn">
+            <span >
+                <input type="text"  value="10">
+            </span>
+            年
+        </div>
+
+    </div>
+    <!--第四行-->
+    <div class="column">
+        <span class="firstColumn">追加资金</span>
+        <div class="secondColumn">
+            <span >
+                <input type="text"  value="1000">
+            </span>
+            ￥
+        </div>
+
+    </div>
+    <!--第五行-->
+    <div>
+        <div class="column">
+            <div class="fourColumn"  >
+                <input type="text" value="计算"  >
+            </div>
+        </div>
+    </div>
+    <!--第六行-->
+    <div class="column">
+        <span class="firstColumn">本金和</span>
+        <div class="secondColumn" >
+            <span >
+                <input type="text"  value="0" >
+            </span>
+            ￥
+        </div>
+
+    </div>
+    <!--第七行-->
+    <div class="column">
+        <span class="firstColumn">利息和</span>
+        <div class="secondColumn" >
+            <span >
+                <input type="text"  value="0">
+            </span>
+            ￥
+        </div>
+
+    </div>
+    <!--第八行-->
+    <div class="column">
+        <span class="firstColumn">本息和</span>
+        <div class="secondColumn">
+            <span >
+                <input type="text"  value="0">
+            </span>
+            ￥
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

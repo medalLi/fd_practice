@@ -14,7 +14,9 @@ body{
     max-width: 1920px;
     /*版心居中*/
     margin:0 auto;
-    padding: 90px;
+    padding-top: 100px;
+    padding-left: 0px;
+    padding-right: 90px;
     background: url("../images/header.png") no-repeat;
     /*背景图等比例缩放*/
     background-size: contain;
@@ -38,10 +40,14 @@ body{
 /*边框背景图 公共类*/
 .panel{
     position: relative;
-
+    /* 一定要有边框，没有边框是无法显示边框背景的 */
     border: 1px solid red;
+    /* 背景图片是不规则的图片，所以每一个 边框的宽度都要设置 */
     border-width: 10px 5px 5px 5px;
+    /* 边框背景连写 不设置边框的宽度的话，默认使用盒子边框宽 */
     border-image: url('../images/panel-l-t.png') 10 5 5 5 stretch;
+    /* 为了保证盒子大小不变，要用內减模式，公共样式中已经写了有*/
+    /*box-sizing: border-box;*/
 }
 .panel .inner{
     position: absolute;

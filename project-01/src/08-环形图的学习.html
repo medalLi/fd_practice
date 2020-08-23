@@ -1,10 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="./js/echarts.4.5.0.js"></script>
+
 </head>
 <body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
 
+    // 指定图表的配置项和数据
+    var option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 10,
+            data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+        },
+        series: [
+            {
+                name: '访问来源',
+                type: 'pie',
+                // 内半径和外半径
+                radius: ['50%', '70%'],
+                // 是否启用防止标签重叠策略
+                avoidLabelOverlap: false,
+                //开始的角度
+               // startAngle:180,
+                // 饼图图形上的文本标签
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                },
+                // 控制线条
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    {value: 100,itemStyle:{
+                        color:'#12274d',
+                            //透明度
+                            opacity:0.2
+                        }},
+                    {value: 200,itemStyle:{
+                            color:'transparent',
+
+                        }},
+                    {value: 100,itemStyle: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    {offset: 0, color: '#00c3de'},
+                                    {offset: 1, color: '#0065c3'}
+                                ]
+                            )
+                        }
+                        },
+
+                ]
+            }
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
 </body>
 </html>

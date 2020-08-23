@@ -1,10 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="./js/echarts.4.5.0.js"></script>
+
 </head>
 <body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
 
+    // 指定图表的配置项和数据
+    var option = {
+        // 标题
+        title: {
+            text: '单位 万',
+            //副标题
+            // subtext: '纯属虚构'
+            textStyle:{
+                color:'#4996f5',
+                fontSize:12
+            },
+            left:30
+        },
+        //鼠标移入的提示
+        tooltip: {
+           // trigger: 'axis'
+        },
+        // 图例组件
+        legend: {
+            data: ['最高气温', '最低气温'],
+            textStyle:{
+                color:'#4b99fa'
+            },
+            right:50
+        },
+        // 右上角的工具栏
+        // toolbox: {
+        //     show: true,
+        //     feature: {
+        //         dataZoom: {
+        //             yAxisIndex: 'none'
+        //         },
+        //         dataView: {readOnly: false},
+        //         magicType: {type: ['line', 'bar']},
+        //         restore: {},
+        //         saveAsImage: {}
+        //     }
+        // },
+        // x轴相关的
+        xAxis: {
+            type: 'category',
+
+            boundaryGap: false,
+            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月','8月', '9月', '10月', '11月', '12月']
+            // 刻度相关的
+            axixTick:{
+                show:false,
+            },
+            // 文本相关的
+            axisLabel:{
+                color:'#4590ed'
+            },
+            // 线条相关的
+            axisLine:{
+                lineStyle:{
+                    color:'#012b48'
+                }
+            }
+        },
+        // y轴相关的
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                formatter: '{value} °C',
+                color:'#326fbe'
+            },
+            // 刻度相关的
+            axixTick:{
+                show:false,
+            },
+            // 线条相关的
+            axisLine:{
+                lineStyle:{
+                    color:'#012b48'
+                }
+            },
+            // 分割线颜色
+            splitLine:{
+                lineStyle:{
+                    color:'#012b48'
+                }
+            }
+        },
+        series: [
+            {
+                name: '最高气温',
+                // 使线条有弧度
+                smooth:true,
+                type: 'line',
+                data: [24, 40, 101, 134, 90, 230, 210,230,120,230,210,120],
+                // 每个线的颜色
+                itemStyle:{
+                    color:'#00f2f1'
+                },
+                // 标记的大小
+                symbolSize:10
+
+                // markPoint: {
+                //     data: [
+                //         {type: 'max', name: '最大值'},
+                //         {type: 'min', name: '最小值'}
+                //     ]
+                // },
+                // markLine: {
+                //     data: [
+                //         {type: 'average', name: '平均值'}
+                //     ]
+                // }
+            },
+            {
+                name: '最低气温',
+                // 使线条有弧度
+                smooth:true,
+                type: 'line',
+                data: [40, 64, 191, 324, 290, 330, 310,213,180,200,180,79],
+                // 每个线的颜色
+                itemStyle:{
+                    color:'#c43938'
+                },
+                // 标记的大小
+                symbolSize:10
+                // markPoint: {
+                //     data: [
+                //         {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
+                //     ]
+                // },
+                // markLine: {
+                //     data: [
+                //         {type: 'average', name: '平均值'},
+                //         [{
+                //             symbol: 'none',
+                //             x: '90%',
+                //             yAxis: 'max'
+                //         }, {
+                //             symbol: 'circle',
+                //             label: {
+                //                 position: 'start',
+                //                 formatter: '最大值'
+                //             },
+                //             type: 'max',
+                //             name: '最高点'
+                //         }]
+                //     ]
+                // }
+            }
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
 </body>
 </html>

@@ -68,6 +68,32 @@ body{
     height: 100px;
     /*background-color: pink;*/
 }
+.overvies li{
+    float:left;
+    width:25%
+}
+.overvies p{
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.overvies span{
+    color: #4c9bfd;
+}
+.overvies ul>li:nth-child(1) i{
+    color: #006cff;
+}
+.overvies ul>li:nth-child(2) i{
+    color: #6acca3;
+}
+.overvies ul>li:nth-child(3) i{
+    color: #000f23;
+}
+.overvies ul>li:nth-child(4) i{
+    color: #ed3f35;
+}
+
 /* 1.2设备故障监控 */
 .monitor{
     height: 400px;
@@ -145,7 +171,7 @@ body{
     float: left;
 }
 .monitor .content ul li span:nth-child(1){
-    width: 25%;
+    width: 30%;
 }
 .monitor .content ul li span:nth-child(2){
     width: 50%;
@@ -154,7 +180,7 @@ body{
     text-overflow: ellipsis;
 }
 .monitor .content ul li span:nth-child(3){
-    width: 25%;
+    width: 20%;
     padding-left: 50px;
 
 }
@@ -230,6 +256,47 @@ body{
     height:250px ;
 }
 
+.user h3{
+    color: #fff;
+    font-size:18px;
+    font-weight: normal;
+}
+.user .echarts{
+    height: 240px;
+    margin-top: 10px;
+}
+.user .echarts .colh{
+    float: left;
+    width:63%;
+    height: 75%;
+    background-color: rgba(255,255,255,0.1);
+}
+.user .echarts .data{
+    float: right;
+    width:33%;
+    height: 75%;
+    background-color: rgba(255,255,255,0.2);
+}
+.user .echarts .data .item{
+    height: 50%;
+    /* item 里面span标签属于行内元素，设置text-align：center是可以水平*/
+    text-align: center;
+    /* item里面的p标签设置了margin-top，防止塌陷这里加上overflow:hidden*/
+    overflow: hidden;
+}
+.user .echarts .data .item p{
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.user .echarts .data .item span{
+    color: #4c9bfd;
+}
+
+
+
 /*第三列的样式*/
 .collum:nth-child(3){
     padding-left: 20px;
@@ -239,10 +306,84 @@ body{
 .order{
     height: 120px;
 }
+
+.order .head{
+    height: 20px;
+    line-height: 20px;
+}
+.order .head a{
+    float: left;
+    color: #1950c4;
+    font-size: 10px;
+}
+
+.order .head a.active{
+    color: #fff;
+    font-size: 15px;
+}
+.order .head span{
+    float: left;
+    width: 2px;
+    height: 15px;
+    background-color: #00f2f1;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 2.5px;
+}
+.order .data{
+    height: 70px;
+    margin-top: 10px;
+}
+
+.order .data .item{
+    float: left;
+    width:50%;
+}
+
+.order .data .item p{
+    color:#fff;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.order .data .item span{
+    color:#4c9bfd;
+
+}
+
+
 /*3.2销售额统计*/
 .sales{
     margin-top: 20px;
     height: 180px;
+}
+
+.sales .head span{
+    color:#fff;
+    font-size: 25px;
+    border-right: 2px solid #00f2f1;
+    padding-right: 16px;
+}
+
+.sales .head a{
+    color:#0bace6;
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 10px;
+}
+.sales .head a.active{
+    color:#fff;
+    background-color: #4c9bfd;
+    font-size: 20px;
+    border-radius: 3px;
+}
+.sales .echarts{
+    height: 120px;
+    margin-top: 10px;
+}
+.sales .echarts .line{
+    height: 100%;
+    background-color: rgba(255,255,255,0.1);
 }
 /*3.3渠道分布&销售进度*/
 .collum:nth-child(3) .wrap{
@@ -254,13 +395,170 @@ body{
     height: 100%;
     width: 48%;
 }
+
+.channel h3{
+    color:#fff;
+    font-size:16px;
+    font-weight:normal;
+}
+
+.channel .data{
+    height:160px;
+    margin-top:10px;
+}
+.channel .data .item{
+    float:left;
+    width:50%;
+    height: 50%;
+}
+.channel .data .item p{
+    color: #fff;
+    margin-bottom: 10px;
+}
+.channel .data .item p b{
+    font-size: 25px;
+    margin-right: 5px;
+}
+.channel .data .item span{
+    color:#4c9bfd;
+}
 /*右侧销售进度*/
 .quarter{
     height: 100%;
     width: 48%;
 }
+
+.quarter h3{
+    font-size:16px;
+    color:#fff;
+    font-weight:normal;
+}
+
+.quarter .echarts{
+    height: 100px;
+    margin-top: 5px;
+    background-color: rgba(255,255,255,0.1);
+    position: relative;
+}
+.quarter .echarts .show{
+    color: #fff;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-30%);
+}
+.quarter .echarts .show b{
+    font-size:16px;
+    margin-right: 5px;
+}
+.quarter .data{
+    height:100px;
+    margin-top: 15px;
+}
+.quarter .data .item {
+    float:left;
+    height:100%;
+    width:50%;
+    padding-top: 100px;
+}
+
+.quarter .data .item p{
+    color:#fff;
+    font-size:14px;
+    margin-bottom: 5px;
+}
+
+.quarter .data .item span{
+    color:#4c9bfd;
+}
 /*3.4全国热榜*/
 .hot{
     margin-top: 20px;
     height: 230px;
+}
+/* 左边  全国热榜*/
+.hot .all{
+    float:left;
+    width:30%;
+    height: 100%;
+}
+.hot .all h3{
+    color:#fff;
+    font-size:18px;
+    margin-bottom: 15px;
+}
+.hot .all p{
+    height: 30%;
+}
+/* 右边  各省热榜*/
+
+.hot .provice{
+    float:left;
+    width:70%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.hot .provice h3{
+    margin-bottom: 10px;
+}
+
+.hot .provice h3 b{
+    float:left;
+    color:#fff;
+    font-size: 18px;
+}
+.hot .provice h3 i{
+    float:right;
+    color:#887faf;
+    font-size: 18px;
+}
+
+/* 市 */
+.hot .provice ul.shi{
+    float:left;
+    width:45%;
+    height:80%;
+
+}
+.hot .provice ul.shi li{
+    color:#4995f4;
+    line-height: 30px;
+    height: 30px;
+}
+.hot .provice ul.shi li.active{
+    color:#a3c6f2;
+    background-color: rgba(255,255,255,0.1);
+}
+.hot .provice ul.shi li span{
+    display: inline-block;
+    width: 50%;
+}
+.hot .provice ul.shi li b{
+    display: inline-block;
+    width: 50%;
+}
+
+/* huo */
+.hot .provice ul.huo{
+    float:right;
+    width:45%;
+    height: 82%;
+}
+.hot .provice ul.huo li{
+    color:#4995f4;
+    line-height: 5px;
+    height: 18%;
+}
+.hot .provice ul.huo li.active{
+    color:#a3c6f2;
+    background-color: rgba(255,255,255,0.1);
+}
+.hot .provice ul.huo li span{
+    display: inline-block;
+    width: 75%;
+}
+.hot .provice ul.huo li b{
+    display: inline-block;
+    width: 25%;
 }

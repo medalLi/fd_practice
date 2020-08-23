@@ -1,10 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="./js/echarts.4.5.0.js"></script>
+
 </head>
 <body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
 
+    // 指定图表的配置项和数据
+    var option = {
+        // 图表的背景色
+        backgroundColor: '#2c343c',
+        //图表的标题
+        title: {
+            text: 'Customized Pie',
+            left: 'center',
+            top: 20,
+            textStyle: {
+                color: '#ccc'
+            }
+        },
+        //鼠标移入的提示
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        // 视觉映射组件
+        visualMap: {
+            show: false,
+            min: 80,
+            max: 600,
+            inRange: {
+                colorLightness: [0, 1]
+            }
+        },
+        series: [
+            {
+                name: '访问来源',
+                type: 'pie',
+                // 内半径 外半径
+                radius: '55%',
+                //饼图的中心(圆心)坐标，数组的第一项是横坐标，第二项是纵坐标
+                center: ['50%', '50%'],
+                //图表真实的数据
+                data: [
+                    {value: 335, name: '直接访问'},
+                    {value: 310, name: '邮件营销'},
+                    {value: 274, name: '联盟广告'},
+                    {value: 235, name: '视频广告'},
+                    {value: 400, name: '搜索引擎'}
+                    //这是对数据数组进行排序
+                ].sort(function (a, b) { return a.value - b.value; }),
+                //‘radius’扇区圆心角展现数据的百分比，半径展现数据的大小
+                //‘area’ 所有扇区圆心角相同，仅通过半径展现数据大小
+                roseType: 'radius',
+                //饼图图形上的文本标签
+                label: {
+                    // 文本颜色
+                    color: 'rgba(255, 255, 255, 0.3)'
+                },
+                //引导线
+                labelLine: {
+                    //线的样式
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.3)'
+                    },
+                    //是否平滑
+                    smooth: 0.2,
+                    //引导线的长度
+                    length: 10,
+                    length2: 20
+                },
+                //图形样式，如果不设置图形的颜色，那就有默认的颜色
+                itemStyle: {
+                    //图形颜色，只是一种颜色
+                    color: '#c23531',
+                    //阴影样式
+                    shadowBlur: 200,
+                    //阴影的颜色
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                },
+                //初始动画效果
+                animationType: 'scale',
+                // 初始动画的缓动效果
+                animationEasing: 'elasticOut',
+                // 初始动画的延迟，支持回调函数
+                animationDelay: function (idx) {
+                    return Math.random() * 200;
+                }
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
 </body>
 </html>

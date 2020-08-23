@@ -25,9 +25,27 @@
     <div class="collum">
         <!--1.1数据概览-->
         <div class="overvies panel">
-            <div class="inner"></div>
+            <div class="inner">
+                <ul>
+                    <li>
+                        <p>2190</p>
+                        <i class="icon-dot"></i><span>设备总数</span>
+                    </li>
+                    <li>
+                        <p>190</p>
+                        <i class="icon-dot"></i><span>季度新增</span>
+                    </li>
+                    <li>
+                        <p>3001</p>
+                        <i class="icon-dot"></i><span>运营设备</span>
+                    </li>
+                    <li>
+                        <p>108</p>
+                        <i class="icon-dot"></i><span>异常设备</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-
         <!--1.2设备故障监控-->
         <div class="monitor panel">
             <div class="inner">
@@ -350,7 +368,25 @@
         </div>
         <!--2.2全国用户总量统计-->
         <div class="user panel">
-            <div class="inner"></div>
+            <div class="inner">
+                <h3>全国用户总量统计</h3>
+                <div class="echarts">
+                    <!-- 左边 柱状图 -->
+                    <div class="colh"></div>
+                    <!-- 右边 数据 -->
+                    <div class="data">
+                        <div class="item">
+                            <p>120899</p>
+                            <span>用户总量</span>
+                        </div>
+                        <div class="item">
+                            <p>248</p>
+                            <span>本月新增</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
     </div>
@@ -358,19 +394,140 @@
     <!--第三列-->
     <div class="collum">
         <!--3.1订单统计-->
-        <div class="order panel"></div>
+        <div class="order panel">
+            <div class="inner">
+                <div class="head">
+                    <a href="javascript:void(0)">365天</a>
+                    <span class="line"></span>
+                    <a href="javascript:void(0)">90天</a>
+                    <span class="line"></span>
+                    <a href="javascript:void(0)" class="active">30天</a>
+                    <span class="line"></span>
+                    <a href="javascript:void(0)">24小时</a>
+                </div>
+                <div class="data">
+                    <div class="item">
+                        <p>1987</p>
+                        <span style="color: #ed3f35">订单量</span>
+                    </div>
+                    <div class="item">
+                        <p>3834</p>
+                        <span style="color: #eacf19">销售额(万元)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--3.2销售额统计-->
-        <div class="sales panel"></div>
+        <div class="sales panel">
+            <div class="head">
+                <span>销售额统计</span>
+                <a href="javascript:void(0)">年</a>
+                <span class="line"></span>
+                <a href="javascript:void(0)">季</a>
+                <span class="line"></span>
+                <a href="javascript:void(0)" class="active">月</a>
+                <span class="line"></span>
+                <a href="javascript:void(0)">周</a>
+            </div>
+            <div class="echarts">
+                <div class="line"></div>
+            </div>
+        </div>
         <!--3.3渠道分布&销售进度-->
         <div class="wrap">
             <!--左边渠道分布 -->
-            <div class="channel panel fl"></div>
+            <div class="channel panel fl">
+                <h3>渠道分布</h3>
+                <div class="data">
+                    <div class="item">
+                        <p>
+                            <b>39</b>
+                            <small>%</small>
+                        </p>
+                            <span>机场</span>
+
+                    </div>
+                    <div class="item">
+                        <p>
+                            <b>28</b>
+                            <small>%</small>
+                        </p>
+                        <span>商场</span>
+
+                    </div>
+                    <div class="item">
+                        <p>
+                            <b>20</b>
+                            <small>%</small>
+                        </p>
+                        <span>地铁</span>
+
+                    </div>
+                    <div class="item">
+                        <p>
+                            <b>13</b>
+                            <small>%</small>
+                        </p>
+                        <span>火车站</span>
+
+                    </div>
+
+                </div>
+            </div>
             <!--右侧销售进度 -->
-            <div class="quarter panel fr"></div>
+            <div class="quarter panel fr">
+                <div class="inner">
+                    <h3>一季度销售进度</h3>
+                    <div class="echarts">
+                        <!--  环形图表 -->
+                        <div class="loop"></div>
+                        <div class="show"><b>75</b><small>%</small></div>
+                        <div class="data">
+                            <div class="item">
+                                <p>1321</p>
+                                <span style="color:#6acca3">销售额统计</span>
+                            </div>
+                            <div class="item">
+                                <p>150%</p>
+                                <span style="color:#6acca3">同比增长</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!--3.4全国热榜-->
-        <div class="hot panel"></div>
+        <div class="hot panel">
+            <div class="inner">
+                <div class="all">
+                    <h3>全国热榜</h3>
+                    <p><span style="color:#d93f36">可爱多</span></p>
+                    <p><span style="color:#68d8fe">娃哈哈</span></p>
+                    <p><span style="color:#4c9bfd">喜之郎</span></p>
+                </div>
+                <!-- 右边 各省热销-->
+                <div class="provice">
+                    <h3 class="clearfix"><b>各省热销</b><i>// 近30日//</i></h3>
+                    <ul class="shi">
+                        <li class="active"><span>北京</span><b>25.179</b></li>
+                        <li><span>河北</span><b>23.252</b></li>
+                        <li><span>上海</span><b>20.760</b></li>
+                        <li><span>江苏</span><b>23.252</b></li>
+                        <li><span>山东</span><b>20.760</b></li>
+                    </ul>
+                    <ul class="huo">
+                        <li><span>八喜</span><b>6080</b></li>
+                        <li ><span>好多鱼</span><b>2170</b></li>
+                        <li><span>娃哈哈</span><b>8341</b></li>
+                        <li><span>可爱多</span><b>9086</b></li>
+                        <li><span>喜之郎</span><b>7017</b></li>
+                        <li><span>好多鱼</span><b>2170</b></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 </body>
